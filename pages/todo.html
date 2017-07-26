@@ -1,0 +1,161 @@
+
+
+<div id ="container" ng-controller = "todo">
+  <button type="button" name="button" ng-click="one()">Complete List</button>
+  <button type="button" name="button" ng-click="filter();two()">-Bought</button>
+  <button type="button" name="button" ng-click="filter();three()">Not-Bought</button>
+    <h1 ng-show="x==1" >Grocery list<i class="fa fa-plus"></i></h1>
+  <ul ng-show="x==1" ng-repeat="groc in grocery">
+    <li ng-click="toggle(groc.id)"><span id="icons"><img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/512/Tick_Mark-128.png" alt="" height="20px" ng-class="{'hide':!groc.buy}"></span> <span id="items" style="position:absolute" ng-class="{'line':groc.buy}">{{groc.name}}</span></li>
+  </ul>
+<h1 ng-show="x==2">Already bought</h1>
+  <ul ng-show="x==2" ng-repeat="b in bought">
+    <li > <span id="items" style="position:absolute" >{{b.name}}</span></li>
+  </ul>
+
+  <h1 ng-show="x==3">Already bought</h1>
+    <ul  ng-show="x==3" ng-repeat="b in nbought">
+      <li > <span id="items" style="position:absolute" >{{b.name}}</span></li>
+    </ul>
+
+
+
+
+</div>
+
+
+
+
+<style media="screen">
+body
+{
+
+font-family: Roboto;
+margin: 0px;
+padding: 0px;
+background-image: url("bg.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+.fa-plus
+
+{
+
+float: right;
+
+}
+.important
+{
+
+color: grey;
+text-decoration: line-through;
+
+}
+
+#container
+{
+
+background-color: #f7f7f7;
+width: 360px;
+margin: 100px auto;
+box-shadow: 0,0,3px,rgb(0,0,0,0.1);
+
+
+}
+
+#icons {
+background: lightgrey;
+height: 40px;
+margin-right: 20px;
+text-align: center;
+color: white;
+width: 40px;
+display: inline-block;
+
+opacity: 1;
+position: relative;
+
+}
+
+.fa-trash
+{
+
+position: relative;
+top: 10px;
+
+}
+
+
+
+
+h1
+{
+
+color: white;
+background-color: #2980b9;
+font-weight: normal;
+font-size: 24px;
+margin: 0px;
+padding: 10px ;
+}
+ul
+{
+
+padding: 0px;
+margin: 0px;
+list-style: none;
+
+
+
+}
+
+input:focus
+{
+
+outline: none;
+}
+
+li
+{
+
+height: 40px;
+color: #666;
+line-height: 40px;
+
+
+}
+
+li:nth-child(2n)
+{
+
+background-color: white;
+
+}
+
+input[type='text']
+
+{
+
+width: 100%;
+padding: 10px;
+border: 3px solid rgba(0,0,0,0);
+
+
+}
+
+.hide{
+
+display: none;
+
+}
+.line{
+
+text-decoration: line-through;
+
+}
+
+
+</style>
+</html>
